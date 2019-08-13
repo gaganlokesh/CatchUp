@@ -66,6 +66,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotterknife.bindView
 import io.noties.markwon.Markwon
+import io.sweers.catchup.databinding.ActivityGenericContainerBinding
 import io.sweers.catchup.injection.ActivityModule
 import java.util.Locale
 import javax.inject.Inject
@@ -103,7 +104,7 @@ class AboutActivity : InjectingBaseActivity() {
         .subscribe()
 
     val viewGroup = viewContainer.forActivity(this)
-    layoutInflater.inflate(R.layout.activity_generic_container, viewGroup)
+    ActivityGenericContainerBinding.inflate(layoutInflater, viewGroup, true)
 
     if (savedInstanceState == null) {
       supportFragmentManager.commitNow {
